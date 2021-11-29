@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "519833303635",
+    "project_id": "bookseat-21eb8",
+    "storage_bucket": "bookseat-21eb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519833303635:android:eddcf314fdd080c7f524a6",
+        "android_client_info": {
+          "package_name": "com.example.bookseat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519833303635-j0bbakm81jmb4c5l66c5hfo9v2bj34gk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZerCl4RJqa3M-TDut4Denicjt-xyN7O8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519833303635-j0bbakm81jmb4c5l66c5hfo9v2bj34gk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
