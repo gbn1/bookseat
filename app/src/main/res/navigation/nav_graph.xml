@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.bookseat.Fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.bookseat.Fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_manageReservationFragment"
+            app:destination="@id/manageReservationFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_newReservationFragment"
+            app:destination="@id/newReservationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newReservationFragment"
+        android:name="com.example.bookseat.Fragments.NewReservationFragment"
+        android:label="fragment_new_reservation"
+        tools:layout="@layout/fragment_new_reservation" />
+    <fragment
+        android:id="@+id/manageReservationFragment"
+        android:name="com.example.bookseat.Fragments.ManageReservationFragment"
+        android:label="fragment_manage_reservation"
+        tools:layout="@layout/fragment_manage_reservation" >
+        <action
+            android:id="@+id/action_manageReservationFragment_to_reservationListFragment"
+            app:destination="@id/reservationListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reservationListFragment"
+        android:name="com.example.bookseat.Fragments.ReservationListFragment"
+        android:label="fragment_reserervation_list"
+        tools:layout="@layout/fragment_reserervation_list" />
+</navigation>

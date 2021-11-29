@@ -40,6 +40,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/title_login"
         android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
@@ -53,6 +54,7 @@
         android:layout_marginTop="50dp"
         android:text="@string/btn_text_google"
         android:textSize="18sp"
+        android:background="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/title_login" />

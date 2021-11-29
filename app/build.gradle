@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -50,5 +51,12 @@ dependencies {
     implementation 'com.google.android.material:material:1.5.0-beta01'
 
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+
+    // Jetpack Compose Integration
+    implementation "androidx.navigation:navigation-compose:2.4.0-beta02"
 
 }
