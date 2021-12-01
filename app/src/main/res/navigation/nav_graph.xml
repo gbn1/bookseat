@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.bookseat.Fragments.LoginFragment"
-        android:label="fragment_login"
+        android:name="com.example.bookseat.fragments.LoginFragment"
+        android:label="Login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_profileFragment"
@@ -16,8 +16,8 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.bookseat.Fragments.ProfileFragment"
-        android:label="fragment_profile"
+        android:name="com.example.bookseat.fragments.ProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_manageReservationFragment"
@@ -28,13 +28,13 @@
     </fragment>
     <fragment
         android:id="@+id/newReservationFragment"
-        android:name="com.example.bookseat.Fragments.NewReservationFragment"
-        android:label="fragment_new_reservation"
+        android:name="com.example.bookseat.fragments.NewReservationFragment"
+        android:label="New reservation"
         tools:layout="@layout/fragment_new_reservation" />
     <fragment
         android:id="@+id/manageReservationFragment"
-        android:name="com.example.bookseat.Fragments.ManageReservationFragment"
-        android:label="fragment_manage_reservation"
+        android:name="com.example.bookseat.fragments.ManageReservationFragment"
+        android:label="Manage reservation"
         tools:layout="@layout/fragment_manage_reservation" >
         <action
             android:id="@+id/action_manageReservationFragment_to_reservationListFragment"
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/reservationListFragment"
-        android:name="com.example.bookseat.Fragments.ReservationListFragment"
-        android:label="fragment_reserervation_list"
+        android:name="com.example.bookseat.fragments.ReservationListFragment"
+        android:label="Reservation list"
         tools:layout="@layout/fragment_reserervation_list" />
 </navigation>

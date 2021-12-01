@@ -1,4 +1,4 @@
-package com.example.bookseat.Fragments
+package com.example.bookseat.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.bookseat.R
 
-class ReservationListFragment : Fragment() {
+class NewReservationFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -19,10 +19,9 @@ class ReservationListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reserervation_list, container, false)
+        return inflater.inflate(R.layout.fragment_new_reservation, container, false)
     }
 
     companion object {
-
-    }
+        }
 }

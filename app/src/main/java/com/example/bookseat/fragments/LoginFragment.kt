@@ -1,16 +1,22 @@
-package com.example.bookseat.Fragments
+package com.example.bookseat.fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.bookseat.R
+import com.example.bookseat.viewmodels.SharedViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,6 +27,9 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginFragment : Fragment() {
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+
+    private val sharedViewModel: SharedViewModel by viewModels()
+
 
     companion object {
         const val GOOGLE_SIGN_IN = 1903
@@ -36,6 +45,9 @@ class LoginFragment : Fragment() {
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback<ActivityResult>() {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
+                if (it.resultCode == Activity.RESULT_OK) {
+                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment())
+                }
                 try {
                     val account = task.getResult(ApiException::class.java)!!
                     firebaseAuthWithGoogle(
@@ -47,7 +59,6 @@ class LoginFragment : Fragment() {
                 }
             }
         )
-
     }
 
     override fun onCreateView(

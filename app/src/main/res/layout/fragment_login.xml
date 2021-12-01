@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.LoginFragment">
+    tools:context=".fragments.LoginFragment">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
         android:layout_width="wrap_content"
@@ -54,8 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
-        android:clickable="true"
         android:background="@color/grey"
+        android:clickable="true"
         android:text="@string/btn_text_google"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
@@ -63,4 +60,3 @@
         app:layout_constraintTop_toBottomOf="@+id/title_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</RelativeLayout>
