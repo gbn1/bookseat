@@ -5,7 +5,10 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_manage_reservation.xml" value="0.2640625" />
+        <entry key="app/src/main/res/layout/fragment_new_reservation.xml" value="0.2640625" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.4353182751540041" />
+        <entry key="app/src/main/res/layout/fragment_reserervation_list.xml" value="0.2640625" />
       </map>
     </option>
   </component>

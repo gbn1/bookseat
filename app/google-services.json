@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "519833303635",
-    "project_id": "bookseat-21eb8",
-    "storage_bucket": "bookseat-21eb8.appspot.com"
+    "project_number": "816223378332",
+    "project_id": "bookseat-2",
+    "storage_bucket": "bookseat-2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:519833303635:android:eddcf314fdd080c7f524a6",
+        "mobilesdk_app_id": "1:816223378332:android:2ff6eb7746bacc7ffbc659",
         "android_client_info": {
           "package_name": "com.example.bookseat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "519833303635-j0bbakm81jmb4c5l66c5hfo9v2bj34gk.apps.googleusercontent.com",
+          "client_id": "816223378332-sh54j48rfngik9bu5t4ehrj572i39kt9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bookseat",
+            "certificate_hash": "ef6b77b47131158cfa07b48658c2fc782f02abdd"
+          }
+        },
+        {
+          "client_id": "816223378332-ol4qkueu2402mbe3kq7b7ja0hvvg5q70.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAZerCl4RJqa3M-TDut4Denicjt-xyN7O8"
+          "current_key": "AIzaSyAahOvMxrq3KbfOxW_3a_gJIGu7nu-5Gj8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "519833303635-j0bbakm81jmb4c5l66c5hfo9v2bj34gk.apps.googleusercontent.com",
+              "client_id": "816223378332-ol4qkueu2402mbe3kq7b7ja0hvvg5q70.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -7,7 +7,6 @@ import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.bookseat.databinding.ActivityMainBinding
-import com.example.bookseat.viewmodels.SharedViewModel
 import com.google.firebase.analytics.FirebaseAnalytics
 
 class MainActivity : AppCompatActivity() {
@@ -15,9 +14,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
 
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
-
-    private val viewModel : SharedViewModel by viewModels()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

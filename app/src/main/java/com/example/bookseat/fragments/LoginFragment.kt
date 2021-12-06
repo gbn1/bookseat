@@ -5,10 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
@@ -16,24 +14,21 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.bookseat.R
-import com.example.bookseat.viewmodels.SharedViewModel
+import com.example.bookseat.databinding.FragmentLoginBinding
+import com.example.bookseat.viewmodels.LoginViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginFragment : Fragment() {
+    private lateinit var binding: FragmentLoginBinding
+
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
-    private val sharedViewModel: SharedViewModel by viewModels()
-
-
-    companion object {
-        const val GOOGLE_SIGN_IN = 1903
-    }
+    private val sharedViewModel: LoginViewModel by viewModels()
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
@@ -49,7 +44,8 @@ class LoginFragment : Fragment() {
                     findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment())
                 }
                 try {
-                    val account = task.getResult(ApiException::class.java)!!
+                    val account = task.getResult(ApiException::class.java)
+                        ?: throw NullPointerException("Expression 'task.getResult(ApiException::class.java)' must not be null")
                     firebaseAuthWithGoogle(
                         account.idToken
                             ?: throw NullPointerException("Expression 'account.idToken' must not be null")
@@ -61,12 +57,11 @@ class LoginFragment : Fragment() {
         )
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+
+        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -75,8 +70,7 @@ class LoginFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         googleSignInClient = GoogleSignIn.getClient(requireContext(), getGSO())
 
-        val button = view.findViewById<SignInButton>(R.id.google_button)
-        button.setOnClickListener { signIn() }
+        binding.googleButton.setOnClickListener{signIn()}
 
     }
 

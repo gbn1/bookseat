@@ -52,7 +52,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
         android:background="@color/grey"
-        android:clickable="true"
         android:text="@string/btn_text_google"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
