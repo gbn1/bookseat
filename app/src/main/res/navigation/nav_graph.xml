@@ -30,19 +30,40 @@
         android:id="@+id/newReservationFragment"
         android:name="com.example.bookseat.fragments.NewReservationFragment"
         android:label="New reservation"
-        tools:layout="@layout/fragment_new_reservation" />
+        tools:layout="@layout/fragment_new_reservation" >
+        <action
+            android:id="@+id/action_newReservationFragment_to_afternoonRoomFragment"
+            app:destination="@id/afternoonRoomFragment" />
+        <action
+            android:id="@+id/action_newReservationFragment_to_morningRoomFragment"
+            app:destination="@id/morningRoomFragment" />
+    </fragment>
     <fragment
         android:id="@+id/manageReservationFragment"
         android:name="com.example.bookseat.fragments.ManageReservationFragment"
         android:label="Manage reservation"
-        tools:layout="@layout/fragment_manage_reservation" >
+        tools:layout="@layout/fragment_manage_reservation" />
+    <fragment
+        android:id="@+id/morningRoomFragment"
+        android:name="com.example.bookseat.fragments.MorningRoomFragment"
+        android:label="fragment_morning_room"
+        tools:layout="@layout/fragment_morning_room" >
         <action
-            android:id="@+id/action_manageReservationFragment_to_reservationListFragment"
-            app:destination="@id/reservationListFragment" />
+            android:id="@+id/action_morningRoomFragment_to_recapReservationFragment"
+            app:destination="@id/recapReservationFragment" />
     </fragment>
     <fragment
-        android:id="@+id/reservationListFragment"
-        android:name="com.example.bookseat.fragments.ReservationListFragment"
-        android:label="Reservation list"
-        tools:layout="@layout/fragment_reserervation_list" />
+        android:id="@+id/afternoonRoomFragment"
+        android:name="com.example.bookseat.fragments.AfternoonRoomFragment"
+        android:label="fragment_afternoon_room"
+        tools:layout="@layout/fragment_afternoon_room" >
+        <action
+            android:id="@+id/action_afternoonRoomFragment_to_recapReservationFragment"
+            app:destination="@id/recapReservationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recapReservationFragment"
+        android:name="com.example.bookseat.fragments.RecapReservationFragment"
+        android:label="fragment_recap_reservation"
+        tools:layout="@layout/fragment_recap_reservation" />
 </navigation>
