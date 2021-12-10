@@ -10,8 +10,13 @@
     <string name="webclient_id">816223378332-ol4qkueu2402mbe3kq7b7ja0hvvg5q70.apps.googleusercontent.com</string>
     <string name="title_new_reservation">Make you choice!</string>
     <string name="morning_reservation">morning (9–13)</string>
-    <string name="afternoon_reservation">afternoon (9–13)</string>
+    <string name="afternoon_reservation">afternoon (14–18)</string>
+    <string name="allday_reservation">all day (9-13/14-18)</string>
     <string name="btn_back">back</string>
     <string name="btn_next">next</string>
-    <string name="place_selected">place selected </string>
+    <string name="afternoon_text">afternoon:</string>
+    <string name="morning_text">morning:</string>
+    <string name="chair_aftr">afternoon chair:</string>
+    <string name="chair_morn">morning chair:</string>
+    <string name="room">room:</string>
 </resources>

@@ -12,28 +12,32 @@ class ListAdapter(private val reservationList : ArrayList<Reservations> ) : Recy
 
     private lateinit var binding : ReservationListModelBinding
 
+    class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
+         var room : TextView = view.findViewById(R.id.room_name)
+         var morning : TextView = view.findViewById(R.id.morning_reservation)
+         var afternoon : TextView = view.findViewById(R.id.afternoon_reservation)
+         var chairAftr : TextView = view.findViewById(R.id.chairNAfternoon)
+         var chairMorn : TextView = view.findViewById(R.id.chairNMorning)
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.reservation_list_model,parent,false)
 
-        return ViewHolder((itemView))
+        return ViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: ListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val reservations : Reservations = reservationList[position]
-        holder.chairNumber.text = reservations.chairsNum.toString()
-        holder.isLong.text = reservations.isVertical.toString()
-        holder.isVertical.text = reservations.isLong.toString()
+        viewHolder.room.text = reservations.room
+        viewHolder.morning.text = reservations.morning.toString()
+        viewHolder.afternoon.text = reservations.afternoon.toString()
+        viewHolder.chairAftr.text = reservations.chairAftr.toString()
+        viewHolder.chairMorn.text = reservations.chairMorn.toString()
     }
 
     override fun getItemCount(): Int {
        return reservationList.size
     }
 
-    public class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
-
-        val chairNumber : TextView = itemView.findViewById(R.id.selected_place)
-        val isVertical : TextView = itemView.findViewById(R.id.room_name)
-        val isLong : TextView = itemView.findViewById(R.id.place_number)
-
-    }
 }
