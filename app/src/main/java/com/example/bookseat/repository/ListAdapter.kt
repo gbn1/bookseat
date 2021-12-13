@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bookseat.R
 import com.example.bookseat.databinding.ReservationListModelBinding
 
-class ListAdapter(private val reservationList : ArrayList<Reservations> ) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter(private val reservationList : ArrayList<Reservation> ) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     private lateinit var binding : ReservationListModelBinding
 
@@ -28,12 +28,12 @@ class ListAdapter(private val reservationList : ArrayList<Reservations> ) : Recy
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val reservations : Reservations = reservationList[position]
-        viewHolder.room.text = reservations.room
-        viewHolder.morning.text = reservations.morning.toString()
-        viewHolder.afternoon.text = reservations.afternoon.toString()
-        viewHolder.chairAftr.text = reservations.chairAftr.toString()
-        viewHolder.chairMorn.text = reservations.chairMorn.toString()
+        val reservation : Reservation = reservationList[position]
+        viewHolder.room.text = reservation.room
+        viewHolder.morning.text = reservation.morning.toString()
+        viewHolder.afternoon.text = reservation.afternoon.toString()
+        viewHolder.chairAftr.text = reservation.chairAftr.toString()
+        viewHolder.chairMorn.text = reservation.chairMorn.toString()
     }
 
     override fun getItemCount(): Int {

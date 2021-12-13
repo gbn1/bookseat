@@ -50,6 +50,7 @@
         android:singleLine="true"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:layout_marginStart="5dp"
         app:layout_constraintStart_toEndOf="@+id/room"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Room selected" />

@@ -1,28 +1,22 @@
 package com.example.bookseat.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bookseat.databinding.FragmentManageReservationBinding
 import com.example.bookseat.repository.ListAdapter
-import com.example.bookseat.repository.Reservations
-import com.google.firebase.firestore.*
+import com.example.bookseat.viewmodels.ManageReservationViewModel
 
 class ManageReservationFragment : Fragment() {
 
-    val TAG = "ManageReservationFrag"
     private lateinit var recyclerView: RecyclerView
-    private lateinit var layoutManager: LinearLayoutManager
-    private lateinit var reservationArrayList: ArrayList<Reservations>
-    private lateinit var listAdapter: ListAdapter
-    private var db = FirebaseFirestore.getInstance()
     private lateinit var binding: FragmentManageReservationBinding
-    private val collection = db.collection("prenotazioni")
+    private val viewModel: ManageReservationViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,43 +42,14 @@ class ManageReservationFragment : Fragment() {
 
         recyclerView.setHasFixedSize(true)
 
-        reservationArrayList = arrayListOf()
+        viewModel.fetchUpdate()
 
-        listAdapter = ListAdapter(reservationArrayList)
+        viewModel.events.observe(viewLifecycleOwner) { event ->
+            recyclerView.adapter = ListAdapter(event)
 
-        recyclerView.adapter = listAdapter
-
-        fetchUpdate()
-
-    }
-
-    private fun fetchUpdate() {
-
-        collection.addSnapshotListener {  value, error ->
-            if (error != null) {
-                Log.e("Firestore Error", error.message.toString())
-                return@addSnapshotListener
-            }
-            value?.documents?.forEach { documentSnapshot ->
-                documentSnapshot.reference
-                    .collection("prenotazioni").get()
-                    .addOnSuccessListener { innerDocuments ->
-                        if (innerDocuments != null) {
-                            innerDocuments.forEach {
-                                Log.e(TAG, it.id)
-                                it.toObject(Reservations::class.java)
-                                    .let {
-                                        reservationArrayList.add(it)
-                                    }
-                                listAdapter.notifyDataSetChanged()
-                            }
-                        } else {
-                            Log.d(TAG, "No such document")
-                        }
-                    }.addOnFailureListener {
-
-                    }
-            }
         }
+
     }
+
+
 }
