@@ -3,6 +3,7 @@ package com.example.bookseat.fragments
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ import com.example.bookseat.R
 import com.example.bookseat.databinding.FragmentLoginBinding
 import com.example.bookseat.viewmodels.LoginViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -28,10 +30,11 @@ class LoginFragment : Fragment() {
 
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
-    private val sharedViewModel: LoginViewModel by viewModels()
+    private val viewmodel: LoginViewModel by viewModels()
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,8 +60,10 @@ class LoginFragment : Fragment() {
         )
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -67,10 +72,12 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         auth = FirebaseAuth.getInstance()
         googleSignInClient = GoogleSignIn.getClient(requireContext(), getGSO())
 
-        binding.googleButton.setOnClickListener{signIn()}
+        binding.googleButton.setOnClickListener { signIn() }
 
     }
 

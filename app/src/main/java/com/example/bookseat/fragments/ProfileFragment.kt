@@ -12,10 +12,14 @@ import com.example.bookseat.databinding.FragmentProfileBinding
 import com.example.bookseat.repository.GoToManageReservation
 import com.example.bookseat.repository.GoToNewReservation
 import com.example.bookseat.viewmodels.ProfileViewModel
+import com.google.android.gms.auth.api.Auth
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
+    private lateinit var auth: FirebaseAuth
 
     private val viewModel: ProfileViewModel by lazy {
         ViewModelProvider(this).get(ProfileViewModel::class.java)
@@ -44,17 +48,27 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         viewModel.events.observe(viewLifecycleOwner) { event ->
             if (null != event) {
                 when (event) {
                     is GoToNewReservation -> findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToNewReservationFragment())
-                    is GoToManageReservation -> findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToManageReservationFragment())
+                    is GoToManageReservation -> findNavController().navigate(
+                        ProfileFragmentDirections.actionProfileFragmentToManageReservationFragment()
+                    )
                 }
 
                 viewModel.eventCompleted()
             }
+        }
+        auth = FirebaseAuth.getInstance()
+        accountEmail()
+
+    }
+
+    private fun accountEmail() {
+        auth.currentUser?.email?.let {
+            val title = getString(R.string.title_profile, it)
+            binding.titleProfile.text = title
         }
     }
 

@@ -8,11 +8,11 @@ class ProfileViewModel : ViewModel() {
     private val _events = MutableLiveData<ProfileEvents?>()
     val events: MutableLiveData<ProfileEvents?> = _events
 
-    fun onClickNewReservation(){
+    fun onClickNewReservation() {
         _events.value = GoToNewReservation
     }
 
-    fun onClickManageReservation(){
+    fun onClickManageReservation() {
         _events.value = GoToManageReservation
     }
 

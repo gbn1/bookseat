@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../.gradle/caches/transforms-3/bd077fc687de10e1dd6ab673e9c616aa/transformed/appcompat-1.4.0/res/layout/support_simple_spinner_dropdown_item.xml" value="0.2589041095890411" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_manage_reservation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_morning_room.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_new_reservation.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_new_reservation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_period.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.4353182751540041" />
         <entry key="app/src/main/res/layout/fragment_recap_reservation.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_reserervation_list.xml" value="0.2640625" />

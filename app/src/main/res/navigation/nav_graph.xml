@@ -51,7 +51,7 @@
     <fragment
         android:id="@+id/periodFragment"
         android:name="com.example.bookseat.fragments.PeriodFragment"
-        android:label="fragment_period"
+        android:label="Room reservation"
         tools:layout="@layout/fragment_period" >
         <action
             android:id="@+id/action_periodFragment_to_recapReservationFragment"

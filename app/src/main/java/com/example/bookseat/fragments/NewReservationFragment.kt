@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.bookseat.R
@@ -20,7 +21,7 @@ class NewReservationFragment : Fragment() {
     private lateinit var binding: FragmentNewReservationBinding
 
 
-    private val viewModel : NewReservationViewModel by lazy {
+    private val viewModel: NewReservationViewModel by lazy {
         ViewModelProvider(this).get(NewReservationViewModel::class.java)
     }
 
@@ -45,11 +46,15 @@ class NewReservationFragment : Fragment() {
 
 
 
-        viewModel.events.observe(viewLifecycleOwner){ event ->
-            if (event != null){
-                when(event){
-                    is GoToChosenTime -> findNavController().navigate(NewReservationFragmentDirections.actionNewReservationFragmentToPeriodFragment())
-                    is GoBackToProfile -> findNavController().navigate(NewReservationFragmentDirections.actionNewReservationFragmentToProfileFragment())
+        viewModel.events.observe(viewLifecycleOwner) { event ->
+            if (event != null) {
+                when (event) {
+                    is GoToChosenTime -> findNavController().navigate(
+                        NewReservationFragmentDirections.actionNewReservationFragmentToPeriodFragment()
+                    )
+                    is GoBackToProfile -> findNavController().navigate(
+                        NewReservationFragmentDirections.actionNewReservationFragmentToProfileFragment()
+                    )
                 }
                 viewModel.eventCompleted()
             }
