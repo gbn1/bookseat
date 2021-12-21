@@ -20,4 +20,8 @@
     <string name="chair_morn">morning chair:</string>
     <string name="room">room:</string>
     <string name="title_period">Room situation </string>
+    <string name="free_desk">Free desk:</string>
+    <string name="busy_desk">Busy desk:</string>
+    <string name="free_desk_color">Green</string>
+    <string name="busy_desk_color">Red</string>
 </resources>

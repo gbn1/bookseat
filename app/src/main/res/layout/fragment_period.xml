@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".fragments.PeriodFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -33,14 +34,68 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/free_desk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/free_desk"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/title_period" />
+
+    <TextView
+        android:id="@+id/free_desk_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/free_desk_color"
+        android:textColor="@color/green"
+        app:layout_constraintStart_toEndOf="@id/free_desk"
+        app:layout_constraintTop_toBottomOf="@id/title_period" />
+
+    <TextView
+        android:id="@+id/busy_desk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/busy_desk"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/free_desk" />
+
+    <TextView
+        android:id="@+id/busy_desk_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/busy_desk_color"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toEndOf="@id/busy_desk"
+        app:layout_constraintTop_toBottomOf="@id/free_desk_color" />
+
+
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/rooms_spinner"
         android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:spinnerMode="dialog"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/title_period" />
+        app:layout_constraintTop_toBottomOf="@+id/busy_desk" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_gridlayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/rooms_spinner" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import com.example.bookseat.repository.Reservation
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ManageReservationViewModel : ViewModel() {
+
     private val _events = MutableLiveData<ArrayList<Reservation>>()
     val events: MutableLiveData<ArrayList<Reservation>> = _events
     val TAG = "ManageReservationFrag"

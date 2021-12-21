@@ -10,6 +10,10 @@ import androidx.fragment.app.viewModels
 import com.example.bookseat.databinding.FragmentPeriodBinding
 import com.example.bookseat.viewmodels.PeriodViewModel
 import android.widget.ArrayAdapter
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.bookseat.fragments.adapters.DeskAdapter
+import com.example.bookseat.repository.Room
 
 
 class PeriodFragment : Fragment() {
@@ -17,6 +21,11 @@ class PeriodFragment : Fragment() {
     private val periodViewModel: PeriodViewModel by viewModels()
 
     private lateinit var binding: FragmentPeriodBinding
+
+    lateinit var spinnerArrayAdapter: ArrayAdapter<Room>
+
+    lateinit var recyclerView: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +41,9 @@ class PeriodFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        recyclerView = binding.recyclerViewGridlayout
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         setupViews()
         setupListeners()
@@ -57,31 +69,45 @@ class PeriodFragment : Fragment() {
             }
 
         }
-
     }
 
     private fun setupListeners() {
         // setup spinner on item selected
+        binding.roomsSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val room = spinnerArrayAdapter.getItem(position)
+                recyclerView.adapter = DeskAdapter(periodViewModel.fetchData(room))
+            }
 
-        // onItemSelected chiamata di rete per recuperare info stanza (lista sedie)
-    }
-
-    private fun setupObservers() {
-        periodViewModel.rooms.observe(viewLifecycleOwner) { roomList ->
-            // fill spinner adapter
-
-            val spinnerArrayAdapter = ArrayAdapter(
-                requireContext(),
-                android.R.layout.simple_spinner_item,
-                roomList.map { room -> room.roomsId }
-            )
-
-            spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            binding.roomsSpinner.adapter = spinnerArrayAdapter
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                /* NOOP */
+            }
 
         }
 
-        // add observer lista sedie
-        // dentro observer lista sedie popolare view con lista sedie
     }
+
+    private fun setupObservers() {
+        periodViewModel.rooms.observe(viewLifecycleOwner) { rooms ->
+
+            spinnerArrayAdapter = ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_spinner_item,
+                rooms
+            )
+
+            spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+            binding.roomsSpinner.adapter = spinnerArrayAdapter
+
+
+        }
+    }
+
+
 }
