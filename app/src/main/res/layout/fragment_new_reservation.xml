@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.bookseat.viewmodels.NewReservationViewModel" />
+            type="com.codermine.bookseat.viewmodels.NewReservationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

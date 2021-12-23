@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.bookseat.viewmodels.ProfileViewModel" />
+            type="com.codermine.bookseat.viewmodels.ProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

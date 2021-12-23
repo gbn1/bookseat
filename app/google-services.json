@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "816223378332",
-    "project_id": "bookseat-2",
-    "storage_bucket": "bookseat-2.appspot.com"
+    "project_number": "464596255778",
+    "project_id": "bookseat-3-with-id",
+    "storage_bucket": "bookseat-3-with-id.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:816223378332:android:2ff6eb7746bacc7ffbc659",
+        "mobilesdk_app_id": "1:464596255778:android:6a535ed312c6c846dcb67b",
         "android_client_info": {
-          "package_name": "com.example.bookseat"
+          "package_name": "com.codermine.bookseat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "816223378332-sh54j48rfngik9bu5t4ehrj572i39kt9.apps.googleusercontent.com",
+          "client_id": "464596255778-5vj0d3hr3c13tqilgmanca6vshisgslt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.bookseat",
+            "package_name": "com.codermine.bookseat",
             "certificate_hash": "ef6b77b47131158cfa07b48658c2fc782f02abdd"
           }
         },
         {
-          "client_id": "816223378332-ol4qkueu2402mbe3kq7b7ja0hvvg5q70.apps.googleusercontent.com",
+          "client_id": "464596255778-qnpm60p1ui1prrt71at0n8s60e5frb9i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAahOvMxrq3KbfOxW_3a_gJIGu7nu-5Gj8"
+          "current_key": "AIzaSyDxbTtjtof_0ltPUq92OrfvlH070opezh8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "816223378332-ol4qkueu2402mbe3kq7b7ja0hvvg5q70.apps.googleusercontent.com",
+              "client_id": "464596255778-qnpm60p1ui1prrt71at0n8s60e5frb9i.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
